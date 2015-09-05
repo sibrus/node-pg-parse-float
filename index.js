@@ -10,6 +10,8 @@ var pgParseFloats = module.exports = function(pg) {
     FLOAT4: 700,
     FLOAT8: 701,
     NUMERIC: 1700,
+    BIGINT: 20,
+    INT8: 20,
     FLOAT4_ARRAY: 1021,
     FLOAT8_ARRAY: 1022,
     NUMERIC_ARRAY: 1231
@@ -18,7 +20,8 @@ var pgParseFloats = module.exports = function(pg) {
   pg.types.setTypeParser(types.FLOAT4, 'text', parseFloat);
   pg.types.setTypeParser(types.FLOAT8, 'text', parseFloat);
   pg.types.setTypeParser(types.NUMERIC, 'text', parseFloat);
-
+  pg.types.setTypeParser(types.BIGINT, 'text', parseFloat);
+  pg.types.setTypeParser(types.INT8, 'text', parseFloat);
   //TODO array parsers
 };
 
